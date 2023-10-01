@@ -25,7 +25,29 @@ namespace Kalkulator.Controllers
 
         public IActionResult About()
         {
+            ViewBag.Imie = "Jan";
+            ViewBag.godzina = DateTime.Now.Hour;
+            ViewBag.powitanie = ViewBag.godzina < 17 ? "Dzien dobry" : "Dobry Wieczor";
 
+            Dane[] osoby =
+                {
+                    new Dane {Name = "Anna", Surname = "Kowalska"},
+                    new Dane {Name = "Karol", Surname = "Dudek"},
+                    new Dane {Name = "Jan", Surname = "Kowalski"}
+                };
+
+
+            return View(osoby); //przekazanie tablicy do View
+        }
+
+        public IActionResult Urodziny(Urodziny urodziny)
+        {
+            ViewBag.powitanie = $"Witaj {urodziny.Imie} masz {DateTime.Now.Year - urodziny.Rok} lat";
+            return View();
+        }
+
+        public IActionResult Calc(Calc calc)
+        {
             return View();
         }
 
