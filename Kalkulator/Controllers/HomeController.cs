@@ -48,6 +48,10 @@ namespace Kalkulator.Controllers
 
         public IActionResult Calc(Calc calc)
         {
+            ViewBag.dodawanie = $"Wynik dodawania to {calc.Number1 + calc.Number2}";
+            ViewBag.odejmowanie = $"Wynik odejmowania to {calc.Number1 - calc.Number2}";
+            ViewBag.mnozenie = $"Wynik mnozenia to {calc.Number1 * calc.Number2}";
+            ViewBag.dzielenie = $"Wynik dzielenia to {calc.Number1 / calc.Number2}";
             return View();
         }
 

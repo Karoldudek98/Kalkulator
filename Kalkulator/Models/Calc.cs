@@ -2,7 +2,7 @@
 {
     public class Calc
     {
-        public int Number1 { get; set; }
-        public int Number2 { get; set; }  
+        public float Number1 { get; set; }
+        public float Number2 { get; set; }  
     }
 }
