@@ -66,6 +66,14 @@ namespace Kalkulator.Controllers
                 case "Remove":
                     c = a - b;
                     break;
+
+                case "Multiply":
+                    c = a * b;
+                    break;
+
+                case "Divide":
+                    c = a / b;
+                    break;
             }
 
             ViewBag.Result = c;
