@@ -46,12 +46,29 @@ namespace Kalkulator.Controllers
             return View();
         }
 
-        public IActionResult Calc(Calc calc)
+        public IActionResult Calc(Calc calc, string Result)
         {
-            ViewBag.dodawanie = $"Wynik dodawania to {calc.Number1 + calc.Number2}";
-            ViewBag.odejmowanie = $"Wynik odejmowania to {calc.Number1 - calc.Number2}";
-            ViewBag.mnozenie = $"Wynik mnozenia to {calc.Number1 * calc.Number2}";
-            ViewBag.dzielenie = $"Wynik dzielenia to {calc.Number1 / calc.Number2}";
+            // ViewBag.dodawanie = $"Wynik dodawania to {calc.Number1 + calc.Number2}";
+            // ViewBag.odejmowanie = $"Wynik odejmowania to {calc.Number1 - calc.Number2}";
+            // ViewBag.mnozenie = $"Wynik mnozenia to {calc.Number1 * calc.Number2}";
+            // ViewBag.dzielenie = $"Wynik dzielenia to {calc.Number1 / calc.Number2}";
+
+            float a = calc.Number1;
+            float b = calc.Number2;
+            float c = 0;
+
+            switch (Result)
+            {
+                case "Add":
+                    c = a + b;
+                    break;
+
+                case "Remove":
+                    c = a - b;
+                    break;
+            }
+
+            ViewBag.Result = c;
             return View();
         }
 

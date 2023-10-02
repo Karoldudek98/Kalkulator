@@ -7,10 +7,9 @@
 <form action="Calc">
     <input type="number" asp-for="Number1" />1 Liczba
     <input type="number" asp-for="Number2" />2 Liczba
-    <input type="submit" />
+    <input type="submit" name="Result" value="Add"/>
+    <input type="submit" name="Result" value="Remove" />
+ 
 </form>
 
-@ViewBag.dodawanie
-@ViewBag.odejmowanie
-@ViewBag.mnozenie
-@ViewBag.dzielenie
+@ViewBag.Result
